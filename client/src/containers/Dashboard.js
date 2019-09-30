@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 
+// import stylesheet
 import '../App.css';
+
+// import components
 import { Header } from '../components/Header';
-import { updatePlaces } from '../actions';
 import { WrappedMap } from '../components/Map';
 import { SearchBar } from './Search-bar-container';
 import { Filters } from '../components/Filters';
+
+// import actions
+import { updatePlaces } from '../actions';
 import { getVotedPlaces } from '../actions'
 
 
@@ -33,9 +38,9 @@ const Dashboard = ({ places, sendPlacesToRedux, votedPlaces, sendVotedPlacesToRe
     // eslint-disable-next-line 
   }, [])
 
-  // if a places has been searched in the search bar:
+  // if a place has been searched in the search bar:
   const [searchedPlace, setSearchedPlace] = useState('');
-  //if a place has been seleced, should open infoWindow
+  //if a place has been selected, should open infoWindow
   const [selectedPlace, setSelectedPlace] = useState(null);
 
   // filters states 
@@ -64,6 +69,7 @@ const Dashboard = ({ places, sendPlacesToRedux, votedPlaces, sendVotedPlacesToRe
   }
 
   useEffect(fetchPlaces, [GET_PLACES_URL])
+
 
   // 🅾️ handling with the votes -> should be updated according to the rating state 
   // url of the backend:
