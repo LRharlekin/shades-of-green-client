@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 
-import * as actions from '../actions';
-import reducer from '../reducers';
+import * as actions from './actions';
+import reducer from './reducers';
 
 describe('reducers', () => {
   it('should return the initial state', () => {
@@ -14,7 +14,7 @@ describe('reducers', () => {
   })
 
   //TODO: HOW TO TEST THE REDUCER...npm
-  it('should handle \'UPDATE_PLACES\'', () => {
+  it('should handle \'SET_PLACES\'', () => {
     const INITIAL_STATE = {
       places: ['place1'],
       votedPlaces: ['place1'],
@@ -23,7 +23,7 @@ describe('reducers', () => {
 
     expect(
       reducer(INITIAL_STATE, {
-        type: 'UPDATE_PLACES',
+        type: 'SET_PLACES',
         places: { results: ['newPlace1'] }
       }
       )).toStrictEqual({

@@ -1,13 +1,13 @@
 import { cleanup } from '@testing-library/react';
 
-import * as actions from '../actions';
+import * as actions from './actions';
 
 describe('actions', () => {
 
   afterEach(cleanup);
 
   it('should create an action when updating places', () => {
-    const places = ['place', 'place'];
+    const places = ['place1', 'place2'];
     const expectedAction = {
       type: 'SET_PLACES',
       places
@@ -15,6 +15,22 @@ describe('actions', () => {
     expect(actions.updatePlaces(places)).toEqual(expectedAction);
   })
 
-  it('should create an action when ')
+  it('should create an action when getting the voted places', () => {
+    const votedPlaces = ['place1', 'place2'];
+    const expectedAction = {
+      type: 'GET_VOTED_PLACES',
+      votedPlaces,
+    }
+    expect(actions.getVotedPlaces(votedPlaces)).toEqual(expectedAction);
+  })
+
+  it('should create an action when getting the rating', () => {
+    const rating = 1;
+    const expectedAction = {
+      type: 'GET_RATING',
+      rating,
+    }
+    expect(actions.getRating(rating)).toEqual(expectedAction);
+  })
 
 })
