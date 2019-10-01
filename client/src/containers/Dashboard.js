@@ -30,7 +30,7 @@ const Dashboard = ({ places, sendPlacesToRedux, votedPlaces, sendVotedPlacesToRe
         console.log(err);
       });
     }
-    // eslint-disable-next-line 
+    // eslint-disable-next-line
   }, [])
 
   // if a places has been searched in the search bar:
@@ -38,7 +38,7 @@ const Dashboard = ({ places, sendPlacesToRedux, votedPlaces, sendVotedPlacesToRe
   //if a place has been seleced, should open infoWindow
   const [selectedPlace, setSelectedPlace] = useState(null);
 
-  // filters states 
+  // filters states
   // const [scoreRangeFilter, setScoreRangeFilter] = useState(null);
   const [typeFilter, setTypeFilter] = useState('restaurant');
   // const [radiusFilter, setRadiusFilter] = useState(null);
@@ -48,7 +48,7 @@ const Dashboard = ({ places, sendPlacesToRedux, votedPlaces, sendVotedPlacesToRe
   const API_KEY = process.env.API_KEY
   const GET_PLACES_URL = `${PLACES_API}key=${API_KEY}&location=${location.lat},${location.lng}&radius=2000&keyword=${typeFilter}`;
   // more options for place types: 👇🏻
-  // const PLACE_TYPES = `restaurant,cafe,clothing_store,gym` 
+  // const PLACE_TYPES = `restaurant,cafe,clothing_store,gym`
   // const KEY_WORDS_ARR = ['restaurant', 'cafe', 'clothing', 'supermarket', 'shoes', 'hair'];
   // const GET_PLACES_URL = `${PLACES_API}key=${API_KEY}&location=${location.lat},${location.lng}&radius=2000&keyword=${KEY_WORDS_ARR[0]}`;
 
@@ -65,7 +65,7 @@ const Dashboard = ({ places, sendPlacesToRedux, votedPlaces, sendVotedPlacesToRe
 
   useEffect(fetchPlaces, [GET_PLACES_URL])
 
-  // 🅾️ handling with the votes -> should be updated according to the rating state 
+  // 🅾️ handling with the votes -> should be updated according to the rating state
   // url of the backend:
   const BASE_URL = 'http://localhost:5000/places';
 
@@ -117,7 +117,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  sendPlacesToRedux: (places) => dispatch(updatePlaces(places)),
+  sendPlacesToRedux: (places) => dispatch(setPlaces(places)),
   sendVotedPlacesToRedux: (votedPlaces) => dispatch(getVotedPlaces(votedPlaces)),
 });
 

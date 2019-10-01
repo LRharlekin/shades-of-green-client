@@ -1,5 +1,5 @@
 export const updatePlaces = (places) => ({
-  type: 'UPDATE_PLACES',
+  type: 'SET_PLACES',
   places
 });
 

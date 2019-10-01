@@ -6,7 +6,7 @@ export function LandPage () {
   return (
     <div className="LandPageContainer">
       {/* <div className="LandPage"> */}
-        <h1 className="Headline">Shades of Green</h1>
+        <h1 className="Headline" data-testid="h1tag">Shades of Green</h1>
         <img className="App-logo" src={process.env.PUBLIC_URL + 'icon-128.png'} alt="logo" />
         <br/>
         <Link to="/" className="CheckItButton">
