@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 
 import '../App.css';
 import { Header } from '../components/Header';
-import { updatePlaces } from '../actions';
+import { setPlaces } from '../actions';
 import { WrappedMap } from '../components/Map';
 import { SearchBar } from './Search-bar-container';
 import { Filters } from '../components/Filters';
 import { getVotedPlaces } from '../actions'
 
 
-const Dashboard = ({ places, sendPlacesToRedux, votedPlaces, sendVotedPlacesToRedux }) => {
+export const Dashboard = ({ places, sendPlacesToRedux, votedPlaces, sendVotedPlacesToRedux }) => {
   //✅ handling with the location of the user:
   const currentLocation = { // this is the default location (BCN🔆 is lat: 41.390205, lng: 2.154007)
     lat: 45.390205,

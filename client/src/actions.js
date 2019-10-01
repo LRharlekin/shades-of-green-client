@@ -1,4 +1,4 @@
-export const updatePlaces = (places) => ({
+export const setPlaces = (places) => ({
   type: 'SET_PLACES',
   places
 });

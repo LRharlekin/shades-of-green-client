@@ -28,6 +28,7 @@ export const Filters = ({ setTypeFilter }) => {
                 key={type}
                 onClick={handleTypeChange}
                 value={type}
+                name={type}
                 className={"FilterButton"}
               >
                 {type}

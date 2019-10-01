@@ -6,13 +6,13 @@ describe('actions', () => {
 
   afterEach(cleanup);
 
-  it('should create an action when updating places', () => {
+  it('should create an action when setting places', () => {
     const places = ['place1', 'place2'];
     const expectedAction = {
       type: 'SET_PLACES',
       places
     }
-    expect(actions.updatePlaces(places)).toEqual(expectedAction);
+    expect(actions.setPlaces(places)).toEqual(expectedAction);
   })
 
   it('should create an action when getting the voted places', () => {

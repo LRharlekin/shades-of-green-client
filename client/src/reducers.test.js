@@ -1,10 +1,10 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 
-import * as actions from './actions';
 import reducer from './reducers';
 
 describe('reducers', () => {
+  afterEach(cleanup);
+
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
       places: [],
@@ -13,7 +13,6 @@ describe('reducers', () => {
     })
   })
 
-  //TODO: HOW TO TEST THE REDUCER...npm
   it('should handle \'SET_PLACES\'', () => {
     const INITIAL_STATE = {
       places: ['place1'],
@@ -32,6 +31,26 @@ describe('reducers', () => {
         rating: null
       })
 
+  })
+
+  it('should handle \'GET_VOTED_PLACES\'', () => {
+     const state = {
+       places: [],
+       votedPlaces: ['place1'],
+       rating: null,
+     }
+
+     const action = {
+       type: 'GET_VOTED_PLACES',
+       votedPlaces: ['place2'],
+     }
+
+     expect(
+       reducer(state, action)).toStrictEqual({
+         votedPlaces: ['place1', 'place2'],
+         places: [],
+         rating: null,
+       })
   })
 
 })
