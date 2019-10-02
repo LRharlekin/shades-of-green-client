@@ -11,8 +11,8 @@ install:
   - npm ci
   # YOU COULD ALSO INSTALL THINGS GLOBALLY HERE, E.G. WEBPACK (NPM I -G WEBPACK)
 
-script:
-  - npm test
+# script:
+#   - npm test
   # - npm build
 
 # deploy:
