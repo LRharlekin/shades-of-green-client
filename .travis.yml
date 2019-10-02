@@ -7,8 +7,8 @@ cache:
 
 before_script: cd client
 
-install:
-  - npm ci
+# install:
+#   - npm ci
   # YOU COULD ALSO INSTALL THINGS GLOBALLY HERE, E.G. WEBPACK (NPM I -G WEBPACK)
 
 # script:
