@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- 10.15.3
+cache: npm
+
+install:
+  - npm ci
+  # YOU COULD ALSO INSTALL THINGS GLOBALLY HERE, E.G. WEBPACK (NPM I -G WEBPACK)
+
+script:
+  - npm test
+  - npm build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+    branch: gh-pages
