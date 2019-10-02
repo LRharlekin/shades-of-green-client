@@ -27,4 +27,3 @@ describe('Header.js', () => {
     expect(getByTestId("h1tag")).toHaveTextContent("Shades of Green");
   })
 })
-
