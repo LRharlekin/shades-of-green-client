@@ -6,8 +6,6 @@ import Dashboard from './containers/Dashboard';
 import Place from './containers/Place-details';
 import { LandPage } from './components/LandPage';
 
-
-
 function App () {  
   return (
     <Router>
