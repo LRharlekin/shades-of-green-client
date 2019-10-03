@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect'; // Correct import
-import faker from "faker" // just for fun
+import '@testing-library/jest-dom/extend-expect'; 
+import faker from "faker" 
 
-import { Header } from './Header'; // using named import instead of import Header from ...
+import { Header } from './Header'; 
 
 describe('Header.js', () => {
   afterEach(cleanup);
@@ -27,4 +27,3 @@ describe('Header.js', () => {
     expect(getByTestId("h1tag")).toHaveTextContent("Shades of Green");
   })
 })
-
