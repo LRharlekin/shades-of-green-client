@@ -45,12 +45,12 @@ export const Dashboard = ({ places, sendPlacesToRedux, votedPlaces, sendVotedPla
 
   //✅ handling with the places list.
   const PLACES_API = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?`
-  const API_KEY = process.env.API_KEY
-  const GET_PLACES_URL = `${PLACES_API}key=${API_KEY}&location=${location.lat},${location.lng}&radius=2000&keyword=${typeFilter}`;
+  const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY
+  const GET_PLACES_URL = `${PLACES_API}key=${REACT_APP_API_KEY}&location=${location.lat},${location.lng}&radius=2000&keyword=${typeFilter}`;
   // more options for place types: 👇🏻
   // const PLACE_TYPES = `restaurant,cafe,clothing_store,gym`
   // const KEY_WORDS_ARR = ['restaurant', 'cafe', 'clothing', 'supermarket', 'shoes', 'hair'];
-  // const GET_PLACES_URL = `${PLACES_API}key=${API_KEY}&location=${location.lat},${location.lng}&radius=2000&keyword=${KEY_WORDS_ARR[0]}`;
+  // const GET_PLACES_URL = `${PLACES_API}key=${REACT_APP_API_KEY}&location=${location.lat},${location.lng}&radius=2000&keyword=${KEY_WORDS_ARR[0]}`;
 
 
   const fetchPlaces = () => {
